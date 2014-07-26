@@ -12,4 +12,5 @@ def get():
 
 @app.route('/crawl', methods=['GET', 'POST'])
 def crawl():
-	return "http://rocketpun.ch/companies/" + request.form["page"] + "/"
+    rocurl = "http://rocketpun.ch/companies/" + request.form["page"] + "/"
+    return rocurl
