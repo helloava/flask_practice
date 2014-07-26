@@ -13,4 +13,15 @@ def get():
 @app.route('/crawl', methods=['GET', 'POST'])
 def crawl():
     rocurl = "http://rocketpun.ch/companies/" + request.form["page"] + "/"
-    return rocurl
+	
+	htmltext = urllib.urlopen(rocurl)
+
+	soup = BeautifulSoup(htmltext, from_encoding="urf-8")
+
+	authors = []
+
+	for tag in soup.select(".main_img_title"):
+		authors.append(tag.get_text())
+
+	for author in authors:
+		return author.encode("utf8")
