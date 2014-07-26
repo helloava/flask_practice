@@ -12,7 +12,7 @@ def get():
 
 @app.route('/crawl', methods=['GET', 'POST'])
 def crawl():
-    rocurl = "http://rocketpun.ch/companies/" + request.form["page"] + "/"
+	rocurl = "http://rocketpun.ch/companies/" + request.form["page"] + "/"
 	
 	htmltext = urllib.urlopen(rocurl)
 
