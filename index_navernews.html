@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>BASIC TEMPLATE</title>
+	<link type="text/css"rel="stylesheet" href="apps/static/css"/>
+		
+
+
+	
+</head>
+
+<body>
+
+	{% for message in form.sort.errors %}
+	<div class="flash">{{ message }}</div>
+	{% endfor %}
+
+
+<form action="{{ url_for('index') }}" method=post>
+
+		{{ form.hidden_tag() }}
+		{{ form.sort.label }}
+		{{ form.sort }}
+		{{ form.submit }}
+	</form>
+</body>
+</html>
